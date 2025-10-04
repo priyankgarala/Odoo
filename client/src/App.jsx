@@ -3,12 +3,11 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AuthPage from "../component/AuthPage";
-import EmployeeDashboard from "../component/EmployeeDashboard";
-import Dashboard from "../component/Dashboard";
-import DashboardLayout from "../component/DashboardLayout";
-import AdminDashboard from "../component/AdminDashboard";
-import ManagerDashboard from "../component/ManagerDashboard";
+import EmployeeDashboard from "../pages/EmployeeDashboard";
+import ManagerDashboard from "../pages/ManagerDashboard";
+import AdminDashboard from "../pages/AdminDashboard";
+import DashboardLayout from "../layouts/DashboardLayout";
+import AuthPage from "../pages/AuthPage";
 
 function App() {
   return (
@@ -25,14 +24,10 @@ function App() {
               element={<ManagerDashboard />}
             ></Route>
             <Route path="/admindashboard" element={<AdminDashboard />}></Route>
-            <Route path="/Dashboard" element={<Dashboard />}></Route>
             <Route
               path="/dashboardlayout"
               element={<DashboardLayout />}
             ></Route>
-            {/* <Route path="/contact" element={<Contact />}></Route> */}
-            {/* <Route path="/service" element={<Service />}></Route> */}
-            {/* <Route path="/login" element={<Login />}></Route> */}
             <Route path="/" element={<AuthPage />}></Route>
             {/* admin 
             <Route path="/admin" element={<Adminlayout />}></Route>
