@@ -6,8 +6,8 @@ import { getPendingApprovals, decideApproval } from "../controllers/approvalCont
 const router = express.Router();
 
 // Managers/Admins: view & approve/reject
-router.get("/pending", authenticate, authorizeRoles("Manager", "Admin"), getPendingApprovals);
+router.get("/pending", authorizeRoles("Manager", "Admin"), getPendingApprovals);
 
-router.post("/:expenseId/decide", authenticate, authorizeRoles("Manager", "Admin"), decideApproval);
+router.post("/:expenseId/decide", authorizeRoles("Manager", "Admin"), decideApproval);
 
 export default router;
