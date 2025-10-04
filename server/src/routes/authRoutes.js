@@ -1,30 +1,12 @@
-const express = require('express');
-
+import express from "express";
 const router = express.Router();
 
-// Mock controller functions (replace with real implementations)
-const authController = {
-    register: (req, res) => {
-        // Registration logic here
-        res.json({ message: 'User registered successfully' });
-    },
-    login: (req, res) => {
-        // Login logic here
-        res.json({ message: 'User logged in successfully' });
-    },
-    logout: (req, res) => {
-        // Logout logic here
-        res.json({ message: 'User logged out successfully' });
-    }
-};
+import { signup, login } from "../controllers/authController.js";
 
-// Register route
-router.post('/register', authController.register);
+// Signup -> creates company + admin user
+router.post("/signup", signup);
 
-// Login route
-router.post('/login', authController.login);
+// Login -> returns JWT + user info
+router.post("/login", login);
 
-// Logout route
-router.post('/logout', authController.logout);
-
-module.exports = router;
+export default router;
