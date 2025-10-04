@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# Odoo specific
+*.log
+*.db
+*.sqlite
+*.bak
+*.tmp
+*.swp
+*.pid
+*.csv
+*.xls
+*.xlsx
+*.zip
+*.tar.gz
+*.rar
+*.pdf
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# OneDrive sync files
+~$*
+*.lnk
