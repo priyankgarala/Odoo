@@ -8,6 +8,7 @@ import ManagerDashboard from "../pages/ManagerDashboard";
 import AdminDashboard from "../pages/AdminDashboard";
 import DashboardLayout from "../layouts/DashboardLayout";
 import AuthPage from "../pages/AuthPage";
+import UserManagement from "../components/UserManagement";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               element={<DashboardLayout />}
             ></Route>
             <Route path="/" element={<AuthPage />}></Route>
+            <Route path="usermanagement" element={<UserManagement />}></Route>
             {/* admin 
             <Route path="/admin" element={<Adminlayout />}></Route>
             <Route path="/Admin" element={<Adminlayout />}>
