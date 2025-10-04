@@ -5,7 +5,6 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import SubmitExpense from "./pages/SubmitExpense";
 import Approvals from "./pages/Approvals";
-import { AuthProvider } from "./contexts/AuthContext";
 import Header from "./components/Header";
 import ProtectedRoute from "./components/ProtectedRoute";
 

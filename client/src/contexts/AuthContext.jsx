@@ -1,13 +1,16 @@
-import axios from "axios";
+import React, { createContext, useState, useEffect } from "react";
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api",
-  headers: { "Content-Type": "application/json" },
-});
+export const AuthContext = createContext();
 
-export function setAuthToken(token) {
-  if (token) api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-  else delete api.defaults.headers.common["Authorization"];
-}
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-export default api;
+  const login = (userData) => setUser(userData);
+  const logout = () => setUser(null);
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};

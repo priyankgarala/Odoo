@@ -8,5 +8,11 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "bcryptjs-react": "^2.4.6",
+    "dotenv": "^17.2.3",
+    "tesseract.js": "^6.0.1"
+  }
 }

@@ -2,14 +2,13 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { authRoutes } from "./src/routes/authRoutes.js";
-import { userRoutes } from "./src/routes/userRoutes.js";
-import { expenseRoutes } from "./src/routes/expenseRoutes.js";
-import { approvalRoutes } from "./src/routes/approvalRoutes.js";
-
-// Import routes
-
+import authRoutes from "./src/routes/authRoutes.js";
+import  userRoutes  from "./src/routes/userRoutes.js";
+import  expenseRoutes  from "./src/routes/expenseRoutes.js";
+import approvalRoutes from "./src/routes/approvalRoutes.js";
 dotenv.config();
+
+
 const app = express();
 
 // Middlewares
@@ -21,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/expenses", expenseRoutes);
-app.use("/api/approvals", approvalRoutes);
+app.use("/api/approvals", approvalRoutes);  
 
 // Default route
 app.get("/", (req, res) => {
@@ -30,8 +29,10 @@ app.get("/", (req, res) => {
 
 // Connect to MongoDB
 const PORT = process.env.PORT || 5000;
-mongoose
-  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => {
     console.log("MongoDB connected");
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
